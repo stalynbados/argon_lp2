@@ -1,1 +1,1 @@
-<app-product-list [products]="products"></app-product-list>
+<app-product-list [products]="products" (onNew)="onNewProduct($event)" (onDelete)="delete($event)" (onEdit)="edit($event)"></app-product-list>
