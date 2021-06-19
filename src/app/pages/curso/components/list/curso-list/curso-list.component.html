@@ -1,0 +1,33 @@
+<br>
+<br>
+<br><br>
+<br>
+
+<div class="container">
+
+  <button class="btn btn-primary" (click)="newCurso()"> Nuevo Curso</button>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">curso</th>
+      <th scope="col">descripcion</th>
+      <th scope="col">estado</th>
+      <th scope="col"> Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of cursos">
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.curso_nombre}}</td>
+      <td>{{p.curso_descripcion}}</td>
+      <td>{{p.curso_estado}}</td>
+      <td><button class="btn-danger" (click)="delete(p.id)">Eliminar</button>
+        <button class="btn-primary" (click)="edit(p.id)">Editar</button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>

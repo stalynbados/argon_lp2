@@ -19,6 +19,12 @@ import {ProductEditComponent} from "../../pages/product/components/forms/product
 import {ProductListComponent} from "../../pages/product/components/list/product-list/product-list.component";
 import {ProductsService} from "../../../providers/products/products.service";
 
+import { CursoComponent } from 'src/app/pages/curso/container/curso/curso.component';
+import { CursoEditComponent } from 'src/app/pages/curso/components/forms/curso-edit/curso-edit.component';
+import { CursoNewComponent } from 'src/app/pages/curso/components/forms/curso-new/curso-new.component';
+import { CursoListComponent } from 'src/app/pages/curso/components/list/curso-list/curso-list.component';
+import { CursoService } from 'src/providers/curso/curso.service';
+
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -41,7 +47,11 @@ import {ProductsService} from "../../../providers/products/products.service";
     ProductNewComponent,
     ProductEditComponent,
     ProductListComponent,
-  ], providers: [ProductsService]
+    CursoComponent,
+    CursoNewComponent,
+    CursoEditComponent,
+    CursoListComponent,
+  ], providers: [ProductsService, CursoService]
 })
 
 export class AdminLayoutModule {
