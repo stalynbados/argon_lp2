@@ -1,0 +1,31 @@
+<br>
+<br>
+<br><br>
+<br>
+
+<div class="container">
+
+  <button class="btn btn-primary" (click)="newRol()"> Nuevo Rol</button>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">descripcion</th>
+      <th scope="col">estado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of rols">
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.rol_descripcion}}</td>
+      <td>{{p.rol_estado}}</td>
+      <td><button class="btn-danger" (click)="delete(p.id)">Eliminar</button>
+        <button class="btn-primary" (click)="edit(p.id)">Editar</button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+

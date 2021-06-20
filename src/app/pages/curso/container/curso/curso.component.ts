@@ -4,6 +4,7 @@ import { Curso } from "../../model/curso";
 import { NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import { CursoNewComponent } from "../../components/forms/curso-new/curso-new.component";
 import { CursoEditComponent } from "src/app/pages/curso/components/forms/curso-edit/curso-edit.component";
+//import { CursoEditComponent } from "../../components/forms/curso-edit/curso-edit.component";
 @Component({
   selector: 'app-curso',
   templateUrl: './curso.component.html',
@@ -32,11 +33,18 @@ export class CursoComponent implements OnInit {
 
   public onNewCurso($event): void {
     if ($event) {
+      console.log("fff");
       const cursoForm = this.modalService.open(CursoNewComponent, {size: 'lg'});
+      console.log("fff");
+      
       cursoForm.componentInstance.title = 'Nuevo Curso';
+      console.log("fe");
       cursoForm.result.then((result) => {
+        console.log("s");
+        console.log(result);
         this.cursoService.postCurso(result).subscribe(response => {
           if (response.success) {
+
             this.getCursos();
           }
         }, error => {
@@ -47,7 +55,9 @@ export class CursoComponent implements OnInit {
     }
   }
   public delete(id: number): void {
+    console.log("fff")
     this.cursoService.deleteCurso(id).subscribe(response => {
+      console.log("fff")
       if (response.success) {
         this.getCursos();
       }

@@ -25,6 +25,15 @@ import { CursoNewComponent } from 'src/app/pages/curso/components/forms/curso-ne
 import { CursoListComponent } from 'src/app/pages/curso/components/list/curso-list/curso-list.component';
 import { CursoService } from 'src/providers/curso/curso.service';
 
+import { RolContainerComponent } from 'src/app/pages/rol/container/rol-container/rol-container.component';
+import { RolEditComponent } from 'src/app/pages/rol/components/forms/rol-edit/rol-edit.component';
+import { RolNewComponent } from 'src/app/pages/rol/components/forms/rol-new/rol-new.component';
+import { RolListComponent } from 'src/app/pages/rol/components/list/rol-list/rol-list.component';
+import { RolService } from 'src/providers/rol/rol.service';
+//import {CursoComponent} from "../../pages/curso/container/curso/curso.component";
+//import {CursoNewComponent} from "../../pages/curso/components/forms/curso-new/curso-new.component";
+
+
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -51,7 +60,11 @@ import { CursoService } from 'src/providers/curso/curso.service';
     CursoNewComponent,
     CursoEditComponent,
     CursoListComponent,
-  ], providers: [ProductsService, CursoService]
+    RolEditComponent,
+    RolNewComponent,
+    RolContainerComponent,
+    RolListComponent,
+  ], providers: [ProductsService, CursoService, RolService]
 })
 
 export class AdminLayoutModule {
